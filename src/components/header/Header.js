@@ -52,7 +52,7 @@ const Header = ({ filterProductsBySearch, setShowingPage, nCartItems }) => {
             <a id="cartCount">{nCartItems}</a>
           </li>
           <li>
-            <button>Encuentranos</button>
+            <button onClick={() => setShowingPage("FindUs")} >Encuentranos</button>
           </li>
         </ul>
       </div>

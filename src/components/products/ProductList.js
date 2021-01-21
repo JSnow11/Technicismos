@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./product.css";
 import Product from "./Product";
 
-const ProductList = ({ products, addToCart }) => {
+const ProductList = ({ products, addToCart, removeFromCart }) => {
   return (
     <div className="productsCointainer">
       {products.map((p) => {

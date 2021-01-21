@@ -58,3 +58,14 @@
   display: inline-block;
   width: 6%;
 }
+
+.amount {
+  width: 18%;
+}
+.amount h4 {
+  margin: 0 10px;
+  width: auto;
+}
+.amount img {
+  width: 10px;
+}

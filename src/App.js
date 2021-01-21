@@ -21,16 +21,21 @@ function App() {
   const filterProductsBySearch = (search) => {
     setVisible(
       products.filter((p) =>
-        p.title
-          .toLowerCase()
-          .includes(
-            search.toLowerCase() ||
-              p.description.toLowerCase().includes(search.toLowerCase())
-          )
+        p.title.toLowerCase().includes(search.toLowerCase())
       )
     );
     setShowingPage("Shop");
   };
+
+  const removeFromCart = (product) => {
+    let auxList = cartItems;
+    let filtered = auxList.filter((i) => i.product.id === product.id)[0];
+    if (filtered && filtered.number > 0) filtered.number = filtered.number - 1;
+    else auxList = auxList.filter((i) => i.product.id !== product.id);
+    setCartItems(auxList);
+    setNCartItems(nCartItems - 1);
+  };
+
   const addToCart = (product) => {
     let auxList = cartItems;
     let filtered = auxList.filter((i) => i.product.id === product.id)[0];
@@ -47,7 +52,13 @@ function App() {
     if (showingPage === "Profile")
       childPage = <Profile user={user} orders={orders} />;
     else if (showingPage === "Cart")
-      childPage = <Cart cartItems={cartItems} setCartItems={setCartItems} />;
+      childPage = (
+        <Cart
+          cartItems={cartItems}
+          addToCart={addToCart}
+          removeFromCart={removeFromCart}
+        />
+      );
     else
       childPage = (
         <ProductList
@@ -55,6 +66,7 @@ function App() {
           products={visible}
           onLoginChanged={setUser}
           setCartItems={setCartItems}
+          removeFromCart={removeFromCart}
         />
       );
     page = (
@@ -112,7 +124,7 @@ const getStaticProducts = () => {
       description:
         "Procesador AMD ryzen 9, lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit ... ",
       stars: 5,
-      price: 133.5,
+      price: 124.5,
       stock: 34,
     },
     {
@@ -123,7 +135,7 @@ const getStaticProducts = () => {
       description:
         "Tarjeta gráfica Nvidia 3080X, lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit ... ",
       stars: 5,
-      price: 133.5,
+      price: 300.55,
       stock: 34,
     },
     {
@@ -134,18 +146,52 @@ const getStaticProducts = () => {
       description:
         "Tarjeta Nvidia 3090, lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit ... ",
       stars: 5,
-      price: 133.5,
+      price: 356.54,
       stock: 34,
     },
     {
       id: 4,
-      title: "AMD Ryzen 9",
-      imgURL: "../../img/amdRyzen.png",
+      title: "AMD Ryzen 7",
+      imgURL:
+        "https://www.amd.com/system/files/2020-09/616656-amd-ryzen-7-5000-series-PIB-1260x709_0.png",
       description:
-        "Procesador AMD ryzen 9, lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit ... ",
+        "Procesador AMD ryzen 7, lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit ... ",
       stars: 5,
-      price: 133.5,
-      stock: 34,
+      price: 154.59,
+      stock: 12,
+    },
+    {
+      id: 5,
+      title: "Placa MSI",
+      imgURL:
+        "https://storage-asset.msi.com/event/2020/mb/amd-550-motherboard/images/msi-mpg_b550_gaming_carbon_wifi-3d2_rgb.png",
+      description:
+        "Placa MSi, lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit ... ",
+      stars: 5,
+      price: 245.59,
+      stock: 12,
+    },
+    {
+      id: 6,
+      title: "Keyboard G Logitech",
+      imgURL:
+        "https://www.logitechg.com/content/dam/products/gaming/keyboards/pro-gaming-keyboard/pro-tenkeyless-gaming-keyboard12.png",
+      description:
+        "Placa MSi, lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit ... ",
+      stars: 5,
+      price: 43.59,
+      stock: 12,
+    },
+    {
+      id: 7,
+      title: "Mouse G Logitech",
+      imgURL:
+        "https://resource.logitechg.com/content/dam/gaming/en/products/pro-wireless-gaming-mouse/pro-wireless-carbon-gallery-1.png",
+      description:
+        "Placa MSi, lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit ... ",
+      stars: 5,
+      price: 54.59,
+      stock: 12,
     },
   ];
 };

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./cart.css";
 import CartItem from "./CartItem";
 
-const Cart = ({ user, cartItems, setCartItems }) => {
+const Cart = ({ user, cartItems, addToCart, removeFromCart }) => {
   console.log(cartItems);
   return (
     <div className="cartContainer">
@@ -13,7 +13,13 @@ const Cart = ({ user, cartItems, setCartItems }) => {
         <h4>Eliminar</h4>
       </div>
       {cartItems.map((item) => {
-        return <CartItem item={item} />;
+        return (
+          <CartItem
+            item={item}
+            addToCart={addToCart}
+            removeFromCart={removeFromCart}
+          />
+        );
       })}
     </div>
   );
