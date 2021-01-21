@@ -19,7 +19,7 @@ const LoginPage = ({ onLoginChanged }) => {
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(user + " - " + pass);
-    if ((user !== "") & (pass !== "")) onLoginChanged({ name: { user } });
+    if ((user !== "") & (pass !== "")) onLoginChanged({ name:  user  });
   };
 
   return (
