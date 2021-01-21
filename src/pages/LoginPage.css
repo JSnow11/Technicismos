@@ -1,0 +1,37 @@
+.loginBackground {
+  background: #004c7e;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.loginBox {
+  text-align: center;
+  position: absolute;
+  width: 230px;
+  height: 400px;
+  padding: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(122, 157, 189, 0.4) 0%,
+    rgba(255, 255, 255, 0) 129.05%
+  );
+  border-radius: 10px;
+}
+
+.logoBox {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logoBox img {
+  width: 85px;
+}
+
+.backBox {
+  height: 10%;
+  width: 100%;
+}

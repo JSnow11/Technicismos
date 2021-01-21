@@ -1,0 +1,94 @@
+header {
+  padding-top: 10px;
+  height: 50px;
+  display: flex;
+}
+
+.headerBar {
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.searchBar {
+  display: inline-block;
+  text-align: center;
+  width: 50%;
+}
+.searchBar input {
+  width: 70%;
+  margin: 10px;
+  color: white;
+  text-align: center;
+  background: rgba(211, 220, 232, 0.5);
+  border-radius: 31px;
+  border-color: transparent;
+  box-shadow: 2px;
+}
+
+::placeholder {
+  color: lightgray;
+}
+
+.logoContainer {
+  display: inline-block;
+  width: 25%;
+}
+
+.logo {
+  cursor: pointer;
+  margin: 10px;
+  float: left;
+  height: 30px;
+}
+
+.buttons {
+  display: flex;
+  width: 25%;
+}
+
+.buttons button {
+  font-size: 10pt;
+  float: right;
+  cursor: pointer;
+  width: 35%;
+
+  margin: 10px;
+  height: 32px;
+  width: 100px;
+  background: #d3dce8;
+  border-radius: 31px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: small;
+  color: #004c7e;
+  border: transparent;
+}
+
+.buttons img {
+  margin: 10px;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+}
+
+#cartCount {
+  font-size: 12px;
+  background: #ff3e3ec0;
+  color: #fff;
+  padding: 0 5px;
+  border-radius: 10px;
+  vertical-align: top;
+}
+
+ul {
+  margin: 0;
+}
+li {
+  max-width: 150px;
+  float: right;
+  list-style-type: none;
+}

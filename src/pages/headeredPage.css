@@ -1,0 +1,18 @@
+.shopBackground {
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    #004c7e 0%,
+    rgba(122, 157, 189, 0.93) 24.04%
+  );
+  color: white;
+}
+
+h1 {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.content {
+  overflow: scroll;
+}

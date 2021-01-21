@@ -1,0 +1,61 @@
+.productsCointainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: top;
+  justify-content: center;
+  height: 100%;
+  width: 80%;
+  padding: 0% 10%;
+  overflow: scroll;
+}
+
+.productBox {
+  position: relative;
+  text-align: center;
+  max-width: 180px;
+  height: 25%;
+  margin: 10px;
+  padding: 1%;
+  height: 300px;
+  background: rgba(0, 76, 126, 0.6);
+  border-radius: 10px;
+}
+
+.productBox text {
+  display: block;
+  height: 15%;
+  font-size: 7pt;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+}
+
+.productImgContainer img {
+  text-align: center;
+  height: 100%;
+}
+.productImgContainer {
+  height: 30%;
+}
+.productBox h3 {
+  margin: 0px;
+  margin-top: 5%;
+  width: 100%;
+  height: 15%;
+}
+.productBox h4 {
+  margin: 0px;
+  margin-top: 5%;
+  height: 10%;
+  font-weight: bold;
+}
+
+.pButtons {
+  width: 100%;
+}
+
+.pButtons img {
+  cursor: pointer;
+  width: 25px;
+  margin: 10px;
+}
