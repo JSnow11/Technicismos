@@ -28,7 +28,9 @@ function App() {
   };
   const addToCart = (product) => {
     let auxList = cartItems;
-    auxList.push({ product: product, number: 1 });
+    let filtered = auxList.filter((i) => i.product.id === product.id)[0];
+    if (filtered.number > 0) filtered.number = filtered.number + 1;
+    else auxList.push({ product: product, number: 1 });
     setCartItems(auxList);
     setNCartItems(nCartItems + 1);
   };
