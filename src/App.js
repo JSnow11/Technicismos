@@ -37,8 +37,9 @@ function App() {
   let childPage;
   console.log(isLoggedIn());
   if (isLoggedIn()) {
-    if (showingPage === "Profile") childPage = <Profile orders={orders} />;
-    if (showingPage === "Cart")
+    if (showingPage === "Profile")
+      childPage = <Profile user={user} orders={orders} />;
+    else if (showingPage === "Cart")
       childPage = <Cart cartItems={cartItems} setCartItems={setCartItems} />;
     else
       childPage = (

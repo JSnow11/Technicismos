@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import "./Profile.css";
+import "./profile.css";
 
-const Profile = ({user}) => {
+const Profile = ({user, orders}) => {
   return (
-    <div className="profileContainer" >
-      
+    <div className="profileContainer">
+      <div className="profileColumnContainer">Hello</div>
+      <div className="profileColumnContainer">sadf</div>
+      <div className="profileColumnContainer">asdf</div>
     </div>
   );
 };
